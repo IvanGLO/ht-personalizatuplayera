@@ -39,16 +39,16 @@ body {
 }
 
 #playera {
-    height: 54vh;
+    width: 100vw;
 }
 
 #diseno_img {
     position: absolute;
-        top: 14vh;
-        /* left: 89px; */
-        height: 28vh;
-        opacity: 0.8;
-        justify-self: anchor-center;
+    top: 11vh;
+    /* left: 89px; */
+    width: 40vw;
+    opacity: 0.8;
+    justify-self: anchor-center;
 }
 
 div.categorias-disenos div.cat
