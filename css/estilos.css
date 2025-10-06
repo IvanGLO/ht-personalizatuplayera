@@ -1,0 +1,206 @@
+/* Ajuste base para ocupar toda la pantalla */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+body {
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Panel de contenido */
+.panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Vista previa de la playera */
+.preview {
+    text-align: center;
+        position: relative;
+        flex-grow: 1;
+        /* display: flex
+    ; */
+        flex-direction: column;
+        height: 61vh;
+}
+
+#playera {
+    height: 54vh;
+}
+
+#diseno_img {
+    position: absolute;
+        top: 14vh;
+        /* left: 89px; */
+        height: 28vh;
+        opacity: 0.8;
+        justify-self: anchor-center;
+}
+
+div.categorias-disenos div.cat
+{
+    display: inline-block;
+        border: 1px solid silver;
+        padding: 3px 7px;
+        border-radius: 1vh;
+        cursor: pointer;
+}
+div.categorias-disenos div.cat:hover {
+    background-color: #e3d3e3;
+}
+
+/* Selector de diseños */
+.opciones img {
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.opciones img:hover {
+    border: 2px solid #6a0dad;
+}
+
+/* Selector de color de playera */
+.colores-playera {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 2vh 0;
+}
+
+.color {
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color:hover {
+    transform: scale(1.1);
+    border-color: #6a0dad;
+}
+
+/* Carrusel de diseños */
+.carrusel-diseno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/*    gap: 10px;*/
+    margin: 2vh 0;
+}
+
+.contenedor-carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.contenedor-carrusel img {
+    height: 15vh;
+    /* margin: 0 5px; */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.contenedor-carrusel img:hover {
+    transform: scale(1.1);
+}
+
+.carrusel-diseno button {
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    height: 100%;
+    width: 5%;
+}
+.carrusel-diseno button.left {
+        background: linear-gradient(90deg, #a179ce00, #e8a5e154);
+}
+.carrusel-diseno button.right {
+        background: linear-gradient(270deg, #a179ce00, #e8a5e154);
+}
+/* Responsive para móviles */
+@media screen and (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Alinea hacia arriba */
+        align-items: center;
+    }
+
+    .preview {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .preview img {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .contenedor-carrusel {
+        width: 100%;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .colores-playera {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .color {
+        width: 30px;
+        height: 30px;
+    }
+
+    .opciones img {
+        width: 80px;
+    }
+
+    h1,
+    h2,
+    h4 {
+        font-size: 1.2em;
+        text-align: center;
+        margin: 10px 0;
+    }
+}

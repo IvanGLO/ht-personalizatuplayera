@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelador de Playeras</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<h3 style="margin: 2vh;">Elige el diseño de tu playera:</h3>
+<div class="categorias-disenos">
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">PERSONAJES</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">HUNTRIX</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">SAJA BOYS</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">LETRAS</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">TODOS</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">OTROS</div>  
+  <div class="cat" onclick="cambiarPlayera('N100-BLANCO.png')">DEMON</div>  
+</div>
+<div class="carrusel-diseno">
+  <button class="left" onclick="moverCarrusel(-1)">«</button>
+  <div class="contenedor-carrusel" id="carrusel">
+  <img src="assets/disenos/IMG-01-0001.png" alt="Diseno 1" onclick="colocarDiseno('IMG-01-0001.png')">
+  <img src="assets/disenos/IMG-01-0002.png" alt="Diseno 2" onclick="colocarDiseno('IMG-01-0002.png')">
+  <img src="assets/disenos/IMG-01-0003.png" alt="Diseno 3" onclick="colocarDiseno('IMG-01-0003.png')">
+  <img src="assets/disenos/IMG-01-0004.png" alt="Diseno 4" onclick="colocarDiseno('IMG-01-0004.png')">
+  <img src="assets/disenos/IMG-01-0005.png" alt="Diseno 5" onclick="colocarDiseno('IMG-01-0005.png')">
+  <img src="assets/disenos/IMG-01-0006.png" alt="Diseno 6" onclick="colocarDiseno('IMG-01-0006.png')">
+  <img src="assets/disenos/IMG-01-0007.png" alt="Diseno 7" onclick="colocarDiseno('IMG-01-0007.png')">
+   </div>
+  <button class="right" onclick="moverCarrusel(1)">»</button>
+</div>
+<div class="colores-playera">
+  <div class="color" style="background-color: white;" onclick="cambiarPlayera('N100-BLANCO.png')" title="Blanca"></div> 
+  <div class="color" style="background-color: black;" onclick="cambiarPlayera('N100-NEGRO.png')" title="Negra"></div> 
+  <div class="color" style="background-color: pink;" onclick="cambiarPlayera('N100-ROSA.png')" title="Rosa"></div> 
+  <div class="color" style="background-color: purple;" onclick="cambiarPlayera('N100-PURPURA.png')" title="Morada"></div> 
+</div>
+<div class="preview">
+  <img id="playera" src="assets/playeras/N100-BLANCO.png" alt="Playera">
+  <img id="diseno_img" src="assets/disenos/IMG-01-0002.png" alt="Diseno">
+</div>
+  <script src="js/funciones.js"></script>
+</body>
+</html>
