@@ -39,14 +39,14 @@ body {
 }
 
 #playera {
-    width: 100vw;
+    width: 680px;
 }
 
 #diseno_img {
     position: absolute;
-    top: 11vh;
+    top: 150px;
     /* left: 89px; */
-    width: 40vw;
+    width: 300px;
     opacity: 0.8;
     justify-self: anchor-center;
 }
