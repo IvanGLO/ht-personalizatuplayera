@@ -18,21 +18,25 @@ body {
 /* Vista previa de la playera */
 .preview {
     text-align: center;
-    position: relative;
-    flex-grow: 1;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 690px;
+    justify-content: center;
 }
 
 #playera {
-    height: 680px;
+    height: 600px;
+    position: absolute;
+    display: flex;
 }
 
 #diseno_img {
     position: absolute;
     top: 150px;
-    /* left: 89px; */
     width: 300px;
     opacity: 0.8;
-    justify-self: anchor-center;
+    display: flex;
 }
 
 div.categorias-disenos div.cat
