@@ -45,14 +45,31 @@ function cambiarCategoria(cat, elemento) {
     el.classList.remove("selected");
   });
 
+  //ocultar los demas
+  const categorias = ['01','02','03','04','05','06','07']; 
+  categorias.forEach(c => {
+    if(c !== cat) {
+      document.getElementById("carrusel"+c).style.display = "none";
+    }
+  });
+
+  //mostrar el carrusel correspondiente
+  document.getElementById("carrusel"+cat).style.display = "flex";
+
   // Agrega la clase "selected" al elemento que llamó la función
   elemento.classList.add("selected");
+
+  //seleccionamos la primer imagen de este carrusel
+  const primerDiseno = document.querySelector("#carrusel"+cat+" img.diseno");
+  if(primerDiseno) {
+    colocarDiseno(primerDiseno.src.split('/').pop(), primerDiseno);
+  }
 }
 
-function moverCarrusel(direccion) {
-  const carrusel = document.getElementById("carrusel");
-  carrusel.scrollBy({
-    left: direccion * 100,
-    behavior: "smooth"
-  });
-}
+// function moverCarrusel(direccion) {
+//   const carrusel = document.getElementById("carrusel");
+//   carrusel.scrollBy({
+//     left: direccion * 100,
+//     behavior: "smooth"
+//   });
+// }
