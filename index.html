@@ -8,36 +8,78 @@
 <body>
 <h3 style="margin: 2vh;">Elige el diseño de tu playera:</h3>
 <div class="categorias-disenos">
-  <div class="cat" onclick="cambiarCategoria('01')">PERSONAJES</div>  
-  <div class="cat" onclick="cambiarCategoria('02')">HUNTRIX</div>  
-  <div class="cat" onclick="cambiarCategoria('03')">SAJA BOYS</div>  
-  <div class="cat" onclick="cambiarCategoria('04')">LETRAS</div>  
-  <div class="cat" onclick="cambiarCategoria('05')">TODOS</div>  
-  <div class="cat" onclick="cambiarCategoria('06')">OTROS</div>  
-  <div class="cat" onclick="cambiarCategoria('07')">DEMON</div>  
+  <div class="cat" onclick="cambiarCategoria('01',this)">PERSONAJES</div>  
+  <div class="cat selected" onclick="cambiarCategoria('02',this)">HUNTRIX</div>  
+  <div class="cat" onclick="cambiarCategoria('03',this)">SAJA BOYS</div>  
+  <div class="cat" onclick="cambiarCategoria('04',this)">LETRAS</div>  
+  <div class="cat" onclick="cambiarCategoria('05',this)">TODOS</div>  
+  <div class="cat" onclick="cambiarCategoria('06',this)">OTROS</div>  
+  <div class="cat" onclick="cambiarCategoria('07',this)">DEMON</div>  
 </div>
 <div class="carrusel-diseno">
   <button class="left" onclick="moverCarrusel(-1)">«</button>
   <div class="contenedor-carrusel" id="carrusel">
-  <img src="assets/disenos/IMG-01-0001.png" alt="Diseno 1" onclick="colocarDiseno('IMG-01-0001.png')">
-  <img src="assets/disenos/IMG-01-0002.png" alt="Diseno 2" onclick="colocarDiseno('IMG-01-0002.png')">
-  <img src="assets/disenos/IMG-01-0003.png" alt="Diseno 3" onclick="colocarDiseno('IMG-01-0003.png')">
-  <img src="assets/disenos/IMG-01-0004.png" alt="Diseno 4" onclick="colocarDiseno('IMG-01-0004.png')">
-  <img src="assets/disenos/IMG-01-0005.png" alt="Diseno 5" onclick="colocarDiseno('IMG-01-0005.png')">
-  <img src="assets/disenos/IMG-01-0006.png" alt="Diseno 6" onclick="colocarDiseno('IMG-01-0006.png')">
-  <img src="assets/disenos/IMG-01-0007.png" alt="Diseno 7" onclick="colocarDiseno('IMG-01-0007.png')">
-   </div>
+    <img class="diseno" src="assets/disenos/02/IMG_02_0001.png" onclick="colocarDiseno('IMG_02_0001.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0002.png" onclick="colocarDiseno('IMG_02_0002.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0003.png" onclick="colocarDiseno('IMG_02_0003.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0004.png" onclick="colocarDiseno('IMG_02_0004.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0005.png" onclick="colocarDiseno('IMG_02_0005.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0006.png" onclick="colocarDiseno('IMG_02_0006.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0007.png" onclick="colocarDiseno('IMG_02_0007.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0008.png" onclick="colocarDiseno('IMG_02_0008.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0009.png" onclick="colocarDiseno('IMG_02_0009.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0010.png" onclick="colocarDiseno('IMG_02_0010.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0011.png" onclick="colocarDiseno('IMG_02_0011.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0012.png" onclick="colocarDiseno('IMG_02_0012.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0013.png" onclick="colocarDiseno('IMG_02_0013.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0014.png" onclick="colocarDiseno('IMG_02_0014.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0015.png" onclick="colocarDiseno('IMG_02_0015.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0016.png" onclick="colocarDiseno('IMG_02_0016.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0017.png" onclick="colocarDiseno('IMG_02_0017.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0018.png" onclick="colocarDiseno('IMG_02_0018.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0019.png" onclick="colocarDiseno('IMG_02_0019.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0020.png" onclick="colocarDiseno('IMG_02_0020.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0021.png" onclick="colocarDiseno('IMG_02_0021.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0022.png" onclick="colocarDiseno('IMG_02_0022.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0023.png" onclick="colocarDiseno('IMG_02_0023.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0024.png" onclick="colocarDiseno('IMG_02_0024.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0025.png" onclick="colocarDiseno('IMG_02_0025.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0026.png" onclick="colocarDiseno('IMG_02_0026.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0027.png" onclick="colocarDiseno('IMG_02_0027.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0028.png" onclick="colocarDiseno('IMG_02_0028.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0029.png" onclick="colocarDiseno('IMG_02_0029.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0030.png" onclick="colocarDiseno('IMG_02_0030.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0031.png" onclick="colocarDiseno('IMG_02_0031.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0032.png" onclick="colocarDiseno('IMG_02_0032.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0033.png" onclick="colocarDiseno('IMG_02_0033.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0034.png" onclick="colocarDiseno('IMG_02_0034.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0035.png" onclick="colocarDiseno('IMG_02_0035.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0036.png" onclick="colocarDiseno('IMG_02_0036.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0037.png" onclick="colocarDiseno('IMG_02_0037.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0038.png" onclick="colocarDiseno('IMG_02_0038.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0039.png" onclick="colocarDiseno('IMG_02_0039.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0040.png" onclick="colocarDiseno('IMG_02_0040.png',this)">
+    <img class="diseno" src="assets/disenos/02/IMG_02_0041.png" onclick="colocarDiseno('IMG_02_0041.png',this)">  
+  </div>
   <button class="right" onclick="moverCarrusel(1)">»</button>
 </div>
+<div class="tallas-playera">
+  <div class="talla" onclick="cambiarTalla('XS',this)" title="XS">XS</div> 
+  <div class="talla selected" onclick="cambiarTalla('S',this)" title="S">S</div> 
+  <div class="talla" onclick="cambiarTalla('M',this)" title="M">M</div> 
+  <div class="talla" onclick="cambiarTalla('L',this)" title="L">L</div> 
+  <div class="talla" onclick="cambiarTalla('XL',this)" title="XL">XL</div> 
+</div>
 <div class="colores-playera">
-  <div class="color" style="background-color: white;" onclick="cambiarPlayera('N100-BLANCO.png')" title="Blanca"></div> 
-  <div class="color" style="background-color: black;" onclick="cambiarPlayera('N100-NEGRO.png')" title="Negra"></div> 
-  <div class="color" style="background-color: pink;" onclick="cambiarPlayera('N100-ROSA.png')" title="Rosa"></div> 
-  <div class="color" style="background-color: purple;" onclick="cambiarPlayera('N100-PURPURA.png')" title="Morada"></div> 
+  <div class="color" style="background-color: white;" onclick="cambiarPlayera('N100-BLANCO.png',this)" title="Blanca"></div> 
+  <div class="color selected" style="background-color: black;" onclick="cambiarPlayera('N100-NEGRO.png',this)" title="Negra"></div> 
+  <div class="color" style="background-color: pink;" onclick="cambiarPlayera('N100-ROSA.png',this)" title="Rosa"></div> 
+  <div class="color" style="background-color: purple;" onclick="cambiarPlayera('N100-PURPURA.png',this)" title="Morada"></div> 
 </div>
 <div class="preview">
   <img id="playera" src="assets/playeras/N100-BLANCO.png" alt="Playera">
   <img id="diseno_img" src="assets/disenos/IMG-01-0002.png" alt="Diseno">
+  <span class="lbl-selection" ><span id="lbl-sel-talla">Talla: XX </span>      <span id="lbl-sel-img">Dibujo: IMG_XX_XXXX</span></span>
 </div>
   <script src="js/funciones.js"></script>
 </body>

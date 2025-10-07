@@ -34,7 +34,7 @@ body {
 #diseno_img {
     position: absolute;
     top: 15vh;
-    width: 31vh;
+    width: 27vh;
     opacity: 0.8;
     display: flex;
 }
@@ -42,10 +42,19 @@ body {
 div.categorias-disenos div.cat
 {
     display: inline-block;
-        border: 1px solid silver;
-        padding: 3px 7px;
-        border-radius: 1vh;
-        cursor: pointer;
+    border: 1px solid silver;
+    padding: 1vh 2vh;
+    border-radius: .5vh;
+    cursor: pointer;
+    font-size: 1.7vh;
+    margin-top: .5vh;
+}
+div.categorias-disenos div.cat.selected,
+div.categorias-disenos div.cat.selected:hover
+{
+    background-color: #b7ae85;
+    font-weight: bold;
+    border: 2px solid gray;
 }
 div.categorias-disenos div.cat:hover {
     background-color: #e3d3e3;
@@ -65,13 +74,25 @@ div.categorias-disenos div.cat:hover {
 }
 
 /* Selector de color de playera */
-.colores-playera {
+.colores-playera,
+.tallas-playera {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin: 2vh 0;
 }
 
+span.lbl-selection
+{
+    text-align: left;
+    padding: 5px 10px;
+    font-size: 1.2vh;
+    color: #b7ae85;
+    z-index: 10;
+    height: fit-content;
+    margin-top: 47vh;
+    white-space: pre;
+}
 .color {
     width: 3vh;
     height: 3vh;
@@ -81,7 +102,36 @@ div.categorias-disenos div.cat:hover {
     transition: transform 0.2s;
 }
 
-.color:hover {
+.color.selected,
+.color.selected:hover {
+    transform: scale(1.3);
+    border: 2px solid #b7ae85;
+    background: url("../img/check.png") center/45% no-repeat;
+}
+
+.talla.selected,
+.talla.selected:hover {
+    transform: scale(1.3);
+    border: 2px solid gray;
+    color: white;
+    font-weight: bold;
+    background-color: #b7ae85;
+}
+
+.talla {
+    width: 3vh;
+    height: 2.5vh;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 1.5vh;
+    text-align: center;
+    padding-top: .5vh;
+}
+
+.color:hover,
+.talla:hover {
     transform: scale(1.1);
     border-color: #6a0dad;
 }
@@ -91,8 +141,8 @@ div.categorias-disenos div.cat:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-/*    gap: 10px;*/
-    margin: 2vh 0;
+    width: 90vw;
+    margin-left: 5vw;
 }
 
 .contenedor-carrusel {
@@ -100,17 +150,29 @@ div.categorias-disenos div.cat:hover {
     overflow-x: auto;
     scroll-behavior: smooth;
     max-width: 100%;
-    gap: 10px;
-    padding: 10px;
+    gap: 1vh;
+    padding: 1vh;
+    margin-top: 2vh;
 }
 
-.contenedor-carrusel img {
-    /* height: 110px; */
+.contenedor-carrusel img.diseno {
+    padding: 1vh;
     height: 15vh;
     /* margin: 0 5px; */
     cursor: pointer;
     transition: transform 0.2s;
 }
+
+.contenedor-carrusel img.diseno.selected {
+    transform: scale(1.1);
+    border: 2px solid gray;
+    height: 15vh;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: #b7ae85;
+    border-radius: 1.5vh;
+}
+
 
 .contenedor-carrusel img:hover {
     transform: scale(1.1);
@@ -121,9 +183,9 @@ div.categorias-disenos div.cat:hover {
     border: none;
     padding: 10px;
     font-size: 18px;
-    height: 100%;
-    width: 50px;
-    border-radius: 30%;
+    height: 45px;
+    width: 45px;
+    border-radius: 10px;
 }
 .carrusel-diseno button.left {
         background: linear-gradient(90deg, #a179cea3, #e8a5e187);
