@@ -26,15 +26,15 @@ body {
 }
 
 #playera {
-    height: 65vh;
+    height: 55vh;
     position: absolute;
     display: flex;
 }
 
 #diseno_img {
     position: absolute;
-    top: 15vh;
-    width: 27vh;
+    top: 12vh;
+    width: 22vh;
     opacity: 0.8;
     display: flex;
 }
@@ -157,7 +157,7 @@ span.lbl-selection
 
 .contenedor-carrusel img.diseno {
     padding: 1vh;
-    height: 15vh;
+    height: 12vh;
     /* margin: 0 5px; */
     cursor: pointer;
     transition: transform 0.2s;
@@ -166,7 +166,6 @@ span.lbl-selection
 .contenedor-carrusel img.diseno.selected {
     transform: scale(1.1);
     border: 2px solid gray;
-    height: 15vh;
     cursor: pointer;
     transition: transform 0.2s;
     background-color: #b7ae85;
