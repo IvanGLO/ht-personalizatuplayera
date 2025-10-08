@@ -27,18 +27,18 @@ body {
 }
 
 #playera {
-    height: 53vh;
+    height: 42vh;
     position: absolute;
     display: flex;
 }
 
 #diseno_img {
     position: absolute;
-    top: 13vh;
-    width: 21vh;
+    top: 11vh;
+    width: 17vh;
     opacity: 0.8;
     display: flex;
-    margin-left: -1.5vh;
+    margin-left: -.5vh;
 }
 
 div.categorias-disenos div.cat
@@ -92,7 +92,7 @@ span.lbl-selection
     color: #b7ae85;
     z-index: 10;
     height: fit-content;
-    margin-top: 47vh;
+    margin-top: 37vh;
     white-space: pre;
 }
 .color {
@@ -163,7 +163,7 @@ span.lbl-selection
 
 .contenedor-carrusel img.diseno {
     padding: 1vh;
-    height: 12vh;
+    height: 10vh;
     /* margin: 0 5px; */
     cursor: pointer;
     transition: transform 0.2s;
