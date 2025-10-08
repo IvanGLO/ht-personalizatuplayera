@@ -7,6 +7,7 @@ body {
     margin: 0px;
     font-family: system-ui;
     overflow-x: hidden;
+    background-color: #e2d8ce;
 }
 
 /* Panel de contenido */
@@ -26,28 +27,29 @@ body {
 }
 
 #playera {
-    height: 55vh;
+    height: 53vh;
     position: absolute;
     display: flex;
 }
 
 #diseno_img {
     position: absolute;
-    top: 12vh;
-    width: 22vh;
+    top: 13vh;
+    width: 21vh;
     opacity: 0.8;
     display: flex;
+    margin-left: -1.5vh;
 }
 
 div.categorias-disenos div.cat
 {
     display: inline-block;
-    border: 1px solid silver;
     padding: 1vh 2vh;
     border-radius: .5vh;
     cursor: pointer;
     font-size: 1.7vh;
     margin-top: .5vh;
+    background-color: #cec6b687;
 }
 div.categorias-disenos div.cat.selected,
 div.categorias-disenos div.cat.selected:hover
@@ -96,8 +98,8 @@ span.lbl-selection
 .color {
     width: 3vh;
     height: 3vh;
-    border-radius: 50%;
-    border: 2px solid #ccc;
+    border-radius: 10%;
+    border: 2px solid gray;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -122,7 +124,7 @@ span.lbl-selection
     width: 3vh;
     height: 2.5vh;
     border-radius: 50%;
-    border: 2px solid #ccc;
+    border: 2px solid gray;
     cursor: pointer;
     transition: transform 0.2s;
     font-size: 1.5vh;
@@ -153,7 +155,7 @@ span.lbl-selection
     gap: 1vh;
     padding: 1vh;
     margin-top: 2vh;
-    background-color: whitesmoke;
+    background-color: #cec6b687;
     margin-left: 5vw;
     border-radius: 2vh;
     padding: 2vh 2vw;
