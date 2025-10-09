@@ -66,10 +66,35 @@ function cambiarCategoria(cat, elemento) {
   }
 }
 
-// function moverCarrusel(direccion) {
-//   const carrusel = document.getElementById("carrusel");
-//   carrusel.scrollBy({
-//     left: direccion * 100,
-//     behavior: "smooth"
-//   });
-// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("loadingModal");
+  const images = document.querySelectorAll("img");
+  let loadedCount = 0;
+
+  images.forEach(img => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          modal.style.display = "none";
+        }
+      });
+      img.addEventListener("error", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  });
+
+  // Si todas ya estaban cargadas
+  if (loadedCount === images.length) {
+     setTimeout(() => {
+       modal.style.display = "none";
+     },5000);
+  }
+});
