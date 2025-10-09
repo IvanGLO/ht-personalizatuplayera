@@ -24,7 +24,7 @@ function cambiarTalla(talla, elemento) {
   elemento.classList.add("selected");
 }
 
-function colocarDiseno(nombre, elemento) {
+function colocarDisenoOld(nombre, elemento) {
   //Cambiamos el diseño en el preview
 
   document.getElementById("diseno_img").src = elemento.src.replace("/min/","/350px/");
@@ -35,8 +35,55 @@ function colocarDiseno(nombre, elemento) {
   });
 
   // Agrega la clase "selected" al elemento que llamó la función
+  elemento.clas
+  sList.add("selected");
+}
+
+
+function colocarDiseno(nombre, elemento) {
+  const imgPreview = document.getElementById("diseno_img");
+  const loader = document.getElementById("loader");
+
+  //Ocultamos la imagen actual mientras carga la nueva
+  imgPreview.style.opacity = "0";
+
+  // Mostrar el loader
+  loader.style.display = "block";
+
+  // Cambiar el diseño en el preview
+  const nuevaSrc = elemento.src.replace("/min/", "/350px/");
+  imgPreview.onload = () => {
+    
+    //mostramos la imagen
+    imgPreview.style.opacity = ".8";
+
+    // Ocultar el loader cuando la imagen haya cargado
+    loader.style.display = "none";
+  
+    //Pruebas
+    // setTimeout(() => {
+    //     loader.style.display = "none";
+    //     imgPreview.style.opacity = ".8";
+    //   },2000);
+    
+  };
+
+  imgPreview.onerror = () => {
+    // Ocultar el loader si hay error al cargar
+    loader.style.display = "none";
+    console.error("Error al cargar la imagen:", nuevaSrc);
+  };
+
+  imgPreview.src = nuevaSrc;
+  document.getElementById("lbl-sel-img").textContent = "Dibujo: " + nombre.replace(".png", "");
+
+  document.querySelectorAll(".diseno").forEach(el => {
+    el.classList.remove("selected");
+  });
+
   elemento.classList.add("selected");
 }
+
 
 function cambiarCategoria(cat, elemento) {
   //Cambiamos el diseño en el preview
