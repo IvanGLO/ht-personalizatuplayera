@@ -214,16 +214,18 @@ span.lbl-selection
 
 .modal-content {
     background-color: #000000b0;
-    padding: 20px;
+    padding: 3vh 5vw;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 4vh;
     color: #9a9583;
     border: 3px solid #666666;
     text-align: -webkit-center;
+    width: 70vw;
+    height: 35vh;
 }
 
 .shapes-7 {
-  width: 50px;
+  width: 8vh;
   aspect-ratio: 1.154;
   position: relative;
   background:conic-gradient(from 120deg at 50% 64%,#0000, #9a958380 1deg 120deg,#0000 121deg);

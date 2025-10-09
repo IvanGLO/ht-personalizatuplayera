@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si todas ya estaban cargadas
   if (loadedCount === images.length) {
-     setTimeout(() => {
-       modal.style.display = "none";
-     },5000);
+      setTimeout(() => {
+        modal.style.display = "none";
+      },2000);
   }
 });
