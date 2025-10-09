@@ -27,7 +27,7 @@ function cambiarTalla(talla, elemento) {
 function colocarDiseno(nombre, elemento) {
   //Cambiamos el diseño en el preview
 
-  document.getElementById("diseno_img").src = elemento.src;
+  document.getElementById("diseno_img").src = elemento.src.replace("/min/","/350px/");
   document.getElementById("lbl-sel-img").textContent = "Dibujo: " + nombre.replace(".png","");
 
   document.querySelectorAll(".diseno").forEach(el => {
