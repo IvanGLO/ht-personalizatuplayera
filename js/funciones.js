@@ -93,7 +93,7 @@ function cambiarCategoria(cat, elemento) {
   });
 
   //ocultar los demas
-  const categorias = ['01','02','03','04','05','06','07']; 
+  const categorias = ['01','02','03','04','05','06']; 
   categorias.forEach(c => {
     if(c !== cat) {
       document.getElementById("carrusel"+c).style.display = "none";
