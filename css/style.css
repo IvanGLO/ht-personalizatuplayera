@@ -1,305 +1,147 @@
-/* Ajuste base para ocupar toda la pantalla */
-body {
-    text-align: center;
-    overflow-y: auto;
-    height: 100vh;
-    width: 100vw;
-    margin: 0px;
-    font-family: system-ui;
-    overflow-x: hidden;
-    background-color: #e2d8ce;
+function cambiarPlayera(nombre, elemento) {
+  // Cambia la imagen
+  document.getElementById("playera").src = "assets/playeras/" + nombre;
+
+  // Quita la clase "selected" de todos los elementos similares
+  document.querySelectorAll(".color").forEach(el => {
+    el.classList.remove("selected");
+  });
+
+  // Agrega la clase "selected" al elemento que llamó la función
+  elemento.classList.add("selected");
 }
 
-/* Panel de contenido */
-.panel {
-    align-items: center;
-    padding: 20px;
+function cambiarTalla(talla, elemento) {
+  // Cambia la imagen
+  document.getElementById("lbl-sel-talla").textContent = "Talla: " + talla;
+
+  // Quita la clase "selected" de todos los elementos similares
+  document.querySelectorAll(".talla").forEach(el => {
+    el.classList.remove("selected");
+  });
+
+  // Agrega la clase "selected" al elemento que llamó la función
+  elemento.classList.add("selected");
 }
 
-/* Vista previa de la playera */
-.preview {
-    text-align: center;
-    display: flex;
-    position: absolute;
-    width: 100%;
-    /* height: 690px; */
-    justify-content: center;
-}
+function colocarDisenoOld(nombre, elemento) {
+  //Cambiamos el diseño en el preview
 
-#playera {
-    height: 42vh;
-    position: absolute;
-    display: flex;
-}
+  document.getElementById("diseno_img").src = elemento.src.replace("/min/","/350px/");
+  document.getElementById("lbl-sel-img").textContent = "Dibujo: " + nombre.replace(".png","");
 
-#diseno_img {
-    position: absolute;
-    top: 11vh;
-    width: 17vh;
-    opacity: 0.8;
-    display: flex;
-    margin-left: -.5vh;
-    transition: opacity 0.5s ease-in-out;
-}
+  document.querySelectorAll(".diseno").forEach(el => {
+    el.classList.remove("selected");
+  });
 
-div.categorias-disenos div.cat
-{
-    display: inline-block;
-    padding: 1vh 2vh;
-    border-radius: .5vh;
-    cursor: pointer;
-    font-size: 1.7vh;
-    margin-top: .5vh;
-    background-color: #cec6b687;
-}
-div.categorias-disenos div.cat.selected,
-div.categorias-disenos div.cat.selected:hover
-{
-    background-color: #b7ae85;
-    font-weight: bold;
-    border: 2px solid gray;
-}
-div.categorias-disenos div.cat:hover {
-    background-color: #e3d3e3;
-}
-
-/* Selector de diseños */
-.opciones img {
-    width: 100px;
-    margin: 10px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: 0.3s;
-}
-
-.opciones img:hover {
-    border: 2px solid #6a0dad;
-}
-
-/* Selector de color de playera */
-.colores-playera,
-.tallas-playera {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 2vh 0;
-}
-
-span.lbl-selection
-{
-    text-align: left;
-    padding: 5px 10px;
-    font-size: 1.2vh;
-    color: #b7ae85;
-    z-index: 10;
-    height: fit-content;
-    margin-top: 37vh;
-    white-space: pre;
-}
-.color {
-    width: 3vh;
-    height: 3vh;
-    border-radius: 10%;
-    border: 2px solid gray;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.color.selected,
-.color.selected:hover {
-    transform: scale(1.3);
-    border: 2px solid #b7ae85;
-    background: url("../img/check.png") center/45% no-repeat;
-}
-
-.talla.selected,
-.talla.selected:hover {
-    transform: scale(1.3);
-    border: 2px solid gray;
-    color: white;
-    font-weight: bold;
-    background-color: #b7ae85;
-}
-
-.talla {
-    width: 3vh;
-    height: 2.5vh;
-    border-radius: 50%;
-    border: 2px solid gray;
-    cursor: pointer;
-    transition: transform 0.2s;
-    font-size: 1.5vh;
-    text-align: center;
-    padding-top: .5vh;
-}
-
-.color:hover,
-.talla:hover {
-    transform: scale(1.1);
-    border-color: #6a0dad;
-}
-
-/* Carrusel de diseños */
-.carrusel-diseno {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90vw;
-    margin-left: 5vw;
-}
-
-.contenedor-carrusel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    max-width: 86vw;
-    gap: 1vh;
-    padding: 1vh;
-    margin-top: 2vh;
-    background-color: #cec6b687;
-    margin-left: 5vw;
-    border-radius: 2vh;
-    padding: 2vh 2vw;
-}
-
-.contenedor-carrusel img.diseno {
-    padding: 1vh;
-    height: 10vh;
-    /* margin: 0 5px; */
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.contenedor-carrusel img.diseno.selected {
-    transform: scale(1.1);
-    border: 2px solid gray;
-    cursor: pointer;
-    transition: transform 0.2s;
-    background-color: #b7ae85;
-    border-radius: 1.5vh;
+  // Agrega la clase "selected" al elemento que llamó la función
+  elemento.clas
+  sList.add("selected");
 }
 
 
-.contenedor-carrusel img:hover {
-    transform: scale(1.1);
+function colocarDiseno(nombre, elemento) {
+  const imgPreview = document.getElementById("diseno_img");
+  const loader = document.getElementById("loader");
+
+  //Ocultamos la imagen actual mientras carga la nueva
+  imgPreview.style.opacity = "0";
+
+  // Mostrar el loader
+  loader.style.display = "block";
+
+  // Cambiar el diseño en el preview
+  const nuevaSrc = elemento.src.replace("/min/", "/350px/");
+  imgPreview.onload = () => {
+    
+    //mostramos la imagen
+    imgPreview.style.opacity = ".8";
+
+    // Ocultar el loader cuando la imagen haya cargado
+    loader.style.display = "none";
+  
+    //Pruebas
+    // setTimeout(() => {
+    //     loader.style.display = "none";
+    //     imgPreview.style.opacity = ".8";
+    //   },2000);
+    
+  };
+
+  imgPreview.onerror = () => {
+    // Ocultar el loader si hay error al cargar
+    loader.style.display = "none";
+    console.error("Error al cargar la imagen:", nuevaSrc);
+  };
+
+  imgPreview.src = nuevaSrc;
+  document.getElementById("lbl-sel-img").textContent = "Dibujo: " + nombre.replace(".png", "");
+
+  document.querySelectorAll(".diseno").forEach(el => {
+    el.classList.remove("selected");
+  });
+
+  elemento.classList.add("selected");
 }
 
-.carrusel-diseno button {
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 18px;
-    height: 45px;
-    width: 45px;
-    border-radius: 10px;
-}
-.carrusel-diseno button.left {
-        background: linear-gradient(90deg, #a179cea3, #e8a5e187);
-}
-.carrusel-diseno button.right {
-        background: linear-gradient(270deg, #a179cea3, #e8a5e187);
+
+function cambiarCategoria(cat, elemento) {
+  //Cambiamos el diseño en el preview
+
+  document.querySelectorAll(".cat").forEach(el => {
+    el.classList.remove("selected");
+  });
+
+  //ocultar los demas
+  const categorias = ['01','02','03','04','05','06']; 
+  categorias.forEach(c => {
+    if(c !== cat) {
+      document.getElementById("carrusel"+c).style.display = "none";
+    }
+  });
+
+  //mostrar el carrusel correspondiente
+  document.getElementById("carrusel"+cat).style.display = "flex";
+
+  // Agrega la clase "selected" al elemento que llamó la función
+  elemento.classList.add("selected");
+
+  //seleccionamos la primer imagen de este carrusel
+  const primerDiseno = document.querySelector("#carrusel"+cat+" img.diseno");
+  if(primerDiseno) {
+    colocarDiseno(primerDiseno.src.split('/').pop(), primerDiseno);
+  }
 }
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
 
-.modal-content {
-    background-color: #000000b0;
-    padding: 3vh 5vw;
-    border-radius: 8px;
-    font-size: 4vh;
-    color: #9a9583;
-    border: 3px solid #666666;
-    text-align: -webkit-center;
-    width: 70vw;
-    height: 35vh;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("loadingModal");
+  const images = document.querySelectorAll("img");
+  let loadedCount = 0;
 
-.shapes-7 {
-  width: 8vh;
-  aspect-ratio: 1.154;
-  position: relative;
-  background:conic-gradient(from 120deg at 50% 64%,#0000, #9a958380 1deg 120deg,#0000 121deg);
-  animation: sp7-0 1.5s infinite cubic-bezier(0.3,1,0,1);
-}
-.shapes-7:before,
-.shapes-7:after {
-  content:'';
-  position: absolute;
-  inset:0;
-  background:inherit;
-  transform-origin: 50% 66%;
-  animation: sp7-1 1.5s infinite;
-}
-.shapes-7:after {
-  --s:-1;
-}
+  images.forEach(img => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          modal.style.display = "none";
+        }
+      });
+      img.addEventListener("error", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  });
 
-@keyframes sp7-0 {
-   0%,30%      {transform: rotate(0)}
-   70%         {transform: rotate(120deg)}
-   70.01%,100% {transform: rotate(360deg)}
-}
-
-@keyframes sp7-1 {
-   0%      {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
-   30%,70% {transform: rotate(calc(var(--s,1)*120deg)) translate(calc(var(--s,1)*-5px),10px)}
-   100%    {transform: rotate(calc(var(--s,1)*120deg)) translate(0)}
-}
-
-div#loader{
-    display: inline-block;
-    position: absolute;
-    top: 15vh;
-    color: #b7ae85;
-}
-
-.dots-6 {
-  width: 4px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  box-shadow: 
-    19px -19px 0 0px, 38px -19px 0 0px, 57px -19px 0 0px,
-    19px 0     0 5px, 38px 0     0 5px, 57px 0     0 5px,
-    19px 19px  0 0px, 38px 19px  0 0px, 57px 19px  0 0px;
-  transform: translateX(-38px);
-  animation: d6 2s infinite linear;
-  color: #b7ae85;
-}
-
-@keyframes d6 {
-  12.5% {box-shadow: 
-    19px -19px 0 0px, 38px -19px 0 0px, 57px -19px 0 5px,
-    19px 0     0 5px, 38px 0     0 0px, 57px 0     0 5px,
-    19px 19px  0 0px, 38px 19px  0 0px, 57px 19px  0 0px}
-  25%   {box-shadow: 
-    19px -19px 0 5px, 38px -19px 0 0px, 57px -19px 0 5px,
-    19px 0     0 0px, 38px 0     0 0px, 57px 0     0 0px,
-    19px 19px  0 0px, 38px 19px  0 5px, 57px 19px  0 0px}
-  50%   {box-shadow: 
-    19px -19px 0 5px, 38px -19px 0 5px, 57px -19px 0 0px,
-    19px 0     0 0px, 38px 0     0 0px, 57px 0     0 0px,
-    19px 19px  0 0px, 38px 19px  0 0px, 57px 19px  0 5px}
-  62.5% {box-shadow: 
-    19px -19px 0 0px, 38px -19px 0 0px, 57px -19px 0 0px,
-    19px 0     0 5px, 38px 0     0 0px, 57px 0     0 0px,
-    19px 19px  0 0px, 38px 19px  0 5px, 57px 19px  0 5px}
-  75%   {box-shadow: 
-    19px -19px 0 0px, 38px -19px 0 5px, 57px -19px 0 0px,
-    19px 0     0 0px, 38px 0     0 0px, 57px 0     0 5px,
-    19px 19px  0 0px, 38px 19px  0 0px, 57px 19px  0 5px}
-  87.5% {box-shadow: 
-    19px -19px 0 0px, 38px -19px 0 5px, 57px -19px 0 0px,
-    19px 0     0 0px, 38px 0     0 5px, 57px 0     0 0px,
-    19px 19px  0 5px, 38px 19px  0 0px, 57px 19px  0 0px}
-}
+  // Si todas ya estaban cargadas
+  if (loadedCount === images.length) {
+      setTimeout(() => {
+        modal.style.display = "none";
+      },2000);
+  }
+});
