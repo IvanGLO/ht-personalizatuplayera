@@ -1,5 +1,5 @@
 /* Ajuste base para ocupar toda la pantalla */
-body {
+bodyORI ONE {
     text-align: center;
     overflow-y: auto;
     height: 100vh;
@@ -10,6 +10,23 @@ body {
     background-color: #e2d8ce;
 }
 
+body {
+    text-align: center;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    font-family: system-ui;
+    overflow-x: hidden;
+    background-color: #e2d8ce;
+    background: linear-gradient(130deg,
+        #006847 0%,
+        #b1d3c8 33%,
+        #ffffff 48%,
+        #ee9aa4 66%,
+        #ce1126 100%
+        );
+}
 /* Panel de contenido */
 .panel {
     align-items: center;
