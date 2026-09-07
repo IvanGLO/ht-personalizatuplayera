@@ -67,12 +67,12 @@ div.categorias-disenos div.cat
     cursor: pointer;
     font-size: 1.7vh;
     margin-top: .5vh;
-    background-color: #cec6b687;
+    background-color: #ffffff87;
 }
 div.categorias-disenos div.cat.selected,
 div.categorias-disenos div.cat.selected:hover
 {
-    background-color: #b7ae85;
+    background-color: #a0c3b2;
     font-weight: bold;
     border: 2px solid gray;
 }
@@ -173,7 +173,7 @@ span.lbl-selection
     gap: 1vh;
     padding: 1vh;
     margin-top: 2vh;
-    background-color: #cec6b687;
+    background-color: #ffffff87;
     margin-left: 5vw;
     border-radius: 2vh;
     padding: 2vh 2vw;
@@ -192,7 +192,7 @@ span.lbl-selection
     border: 2px solid gray;
     cursor: pointer;
     transition: transform 0.2s;
-    background-color: #b7ae85;
+    background-color: #a0c3b2;
     border-radius: 1.5vh;
 }
 
